@@ -1,0 +1,63 @@
+{
+  "name": "ai-productivity-suite",
+  "version": "1.0.0",
+  "description": "Full-stack AI productivity suite with text generation, image creation, and document processing",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && npm run dev",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "cd client && npm run build",
+    "build:server": "cd server && npm run build",
+    "start": "cd server && npm start",
+    "test": "npm run test:client && npm run test:server",
+    "test:client": "cd client && npm test",
+    "test:server": "cd server && npm test",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
+    "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
+    "db:migrate": "cd server && npx prisma migrate dev",
+    "db:migrate:prod": "cd server && npx prisma migrate deploy",
+    "db:seed": "cd server && npx prisma db seed",
+    "db:studio": "cd server && npx prisma studio",
+    "deploy": "npm run build && npm run deploy:client && npm run deploy:server",
+    "deploy:client": "cd client && vercel --prod",
+    "deploy:server": "cd server && railway up"
+  },
+  "keywords": [
+    "ai",
+    "productivity",
+    "full-stack",
+    "react",
+    "nodejs",
+    "typescript",
+    "openai",
+    "gpt-4",
+    "dall-e"
+  ],
+  "author": "AI Productivity Suite Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "concurrently": "^8.2.0",
+    "eslint": "^8.45.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/1234-ad/ai-productivity-suite.git"
+  },
+  "bugs": {
+    "url": "https://github.com/1234-ad/ai-productivity-suite/issues"
+  },
+  "homepage": "https://github.com/1234-ad/ai-productivity-suite#readme"
+}
